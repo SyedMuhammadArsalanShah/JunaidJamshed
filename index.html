@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="css/swiper.min.css">
+  
+
+    </head>
+   
+  <style> 
+  
+  a{text-decoration: none}
+  
+  .container{margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .head{margin-left: 500px;}
+  
+  .row2{margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+.m1{width: 100%;
+}
+
+
+
+
+
+
+.frame {
+    text-align: center; 
+    position: relative;
+    cursor: pointer;    
+    perspective: 500px; 
+}
+.frame img {
+    width: 300px;
+    height: 300px;
+}
+.frame .details {
+    width: 70%;
+    height: 80%;    
+    padding: 5% 8%;
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(90deg);
+    transform-origin: 50%;
+    background-color :white ;  
+    opacity:0;
+    transition: all 0.4s ease-in;
+    color:black
+    
+}
+.frame:hover .details {
+    transform: translate(-50%, -50%) rotateY(0deg);
+    opacity: 0.8;
+}
+
+.box{
+    font-family: 'Merriweather Sans', sans-serif;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+.box:before{
+    content: '';
+    background-color: #fff;
+    box-shadow: 0 0 15px #222;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.box:hover:before{
+    opacity: 0.8;
+    left: 20px;
+    top: 20px;
+    bottom: 20px;
+    right: 20px;
+}
+.box img{
+    width: 100%;
+    height: 400px;
+    transition: all 0.5s;
+}
+.box:hover img{ filter: grayscale(80%); }
+.box .box-content{
+    text-align: right;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1;
+}
+.box .title{
+    color: #fff;
+    background: linear-gradient(royalblue,steelblue);
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin: 0 19px 4px 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s;
+}
+.box:hover .title{
+    opacity: 1;
+    transform: translateX(0);
+}
+.box .post{
+    color: #fff;
+    background: linear-gradient(rgb(17, 46, 134),steelblue);
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 3px 10px;
+    margin: 0 0 15px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(20px);
+    position: relative;
+    transition: all 0.5s;
+}
+.box:hover .post{
+    opacity: 1;
+    transform: translateX(0);
+}
+.box .post:before{
+    content: '';
+    background: linear-gradient(45deg, royalblue 49%, transparent 50%);
+    height: 18px;
+    width: 15px;
+    position: absolute;
+    top: -18px;
+    right: 0;
+}
+.box .icon{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    z-index: 1;
+    transition: all 0.5s;
+}
+.box:hover .icon{ opacity: 1; }
+.box .icon li a{
+    color: #fff;
+    background-color:royalblue;
+    font-size: 18px;
+    text-align: center;
+    line-height: 35px;
+    height: 35px;
+    width: 100px;
+    margin: 0 0 5px;
+    border-radius: 10px 0;
+    display: block;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.box .icon li a:hover{
+    color: #fff;
+    background-color:royalblue;
+    text-shadow: 0 0 2px #222;
+    box-shadow: 0 0 10px royalblue;
+}
+@media only screen and (max-width:990px){
+    .box { margin: 0 0 30px; }
+}
+@media only screen and (max-width:479px){
+    .box .title{ font-size: 18px; }
+    .box .post{ font-size: 12px; }
+}
+
+
+
+
+html, body {
+    position:relative;
+    
+    }
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 400px;
+      height: 600px;
+      position:relative;
+      left: 50%;
+      top: 50%;
+      margin-left: -200px;
+      margin-top: -40px;
+      margin-bottom: 100px;
+
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      position:relative;
+    }
+
+
+
+
+ .slide-text{
+   
+  text-decoration: none;
+     width: 60%;
+    height:auto;   
+    padding: 5% 8%;
+    position: absolute;
+    content: "";
+    top: 35%;
+    left: 20%;
+    transform-origin: 50%;
+    background-color: white;
+    transition: all 0.1s ease-in;
+    color:#000;
+    opacity: 0.7;
+ }
+ h2,h1{
+ font-style:bold;text-decoration: none;
+ color: seagreen;  font-size: 40px; font-family: 'Times New Roman', Times, serif;
+ text-transform: capitalize; 
+ text-align: center;}
+    .slide-text ,p{
+        text-transform: capitalize;
+       font-family: 'Times New Roman', Times, serif;
+
+        text-align: center;
+        opacity: 1;
+        font-size: 15px;}
+
+
+
+        .slide-text a{
+            color: #fff;
+    background-color:royalblue;
+    font-size: 18px;
+    text-align: center;
+    line-height: 35px;
+    height: 35px;
+    width: 100px;
+    margin-left:25px;
+    border-radius: 10px 0;
+    display: block;
+    transition: all 0.3s;
+    text-decoration: none;
+  
+        }
+
+
+.m1{width: 100%;
+height: 500px;}
+
+
+.full {
+    width: 100%;
+    padding: 15px ;
+    border-radius: 10px;	
+}
+
+.footer {
+	height: auto;
+	padding-bottom: 30px;
+	position: relative;
+	width: 100%;
+    color:#000;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+    background:transparent;
+}
+
+
+.footer h3 {
+	border-bottom: 1px solid #BAC1C8;
+  color:#000;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	padding: 40px 0 10px;
+	text-transform: uppercase;
+}
+.footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 15px;
+	color: #7F8C8D;text-decoration: none
+}
+.footer ul li a {
+	padding: 0 0 5px 0;
+	display: block;text-decoration: none
+}
+.footer a {
+	color: #78828D;
+  color:#000;;text-decoration: none
+}
+.supportLi h4 {
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: normal;
+	margin-bottom: 0 !important;
+	padding-bottom: 0;
+}
+.btn:focus{outline-width : 0;}.btn{color: #fff;}
+.subscribe-btn .btn {
+	border: medium none;
+	border-bottom:1px solid black;
+	display: inline-block;
+	height: 40px;
+	padding: 0;
+	width: 100px;
+  color:#000;
+    margin-top:10px;
+}
+.subscribe-btn {
+	overflow: hidden;
+}
+
+.social li {
+  color:#000;
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 8px 0 0;
+	padding: 0;
+	text-align: center;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+
+.social li a{
+  color:#000;
+}
+.social li:hover {
+	border-radius: 100px ;
+	background:#000;
+}
+.social li a i {
+	font-size: 16px;
+	margin: 0 0 0 5px;
+  color:#000;
+
+
+
+}
+.black{
+
+background: #000;
+ 
+}
+.white{
+  color: white; 
+}
+.footer-bottom {
+  
+       
+	border-top: 1px solid #DDDDDD;
+	padding: 10px;
+
+  color:#fff;
+}
+.footer-bottom p.pull-left {
+	padding-top: 2px;
+}
+.payments {
+	font-size: 1.5em;	
+}
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background:transparent;
+  font-size: 15px;
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+}
+.content {
+  height: 200px;
+}
+a { text-decoration: none; }
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.nav-fostrap a{padding-left: 10px;}
+.nav-fostrap {
+  display: block;
+  margin-bottom: 15px 0;
+  background:transparent;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px;text-decoration: none
+}
+
+.nav-fostrap ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;text-decoration: none
+}
+
+.nav-fostrap li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  font-size: 14;
+  color: #000;text-decoration: none
+}
+
+.nav-fostrap li a {
+  padding: 15px 20px;
+  font-size: 14;
+  color: #000;
+  display: inline-block;
+  outline: 0;
+  font-weight: 400;text-decoration: none
+
+}
+
+.nav-fostrap li:hover ul.dropdown { display: block; }
+
+.nav-fostrap li ul.dropdown {
+  position: absolute;
+  display: none;
+  width: 200px;
+  background:transparent;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding-top: 0;text-decoration: none
+}
+
+.nav-fostrap li ul.dropdown li {
+  display: block;
+  list-style-type: none;
+}
+
+.nav-fostrap li ul.dropdown li a {
+  padding: 15px 20px;
+  font-size: 15px;
+  color: #000;
+  display: block;
+  font-weight: 400;text-decoration: none
+}
+
+.nav-fostrap li ul.dropdown li:last-child a { border-bottom: none; }
+
+.nav-fostrap li:hover a {
+  background: transparent;
+  color: #000!important;
+}
+
+.nav-fostrap li:first-child:hover a { border-radius: 3px 0 0 3px; }
+
+.nav-fostrap li ul.dropdown li:hover a { background: rgba(0,0,0, .1); }
+
+.nav-fostrap li ul.dropdown li:first-child:hover a { border-radius: 0; }
+
+.nav-fostrap li:hover .arrow-down { border-top: 5px solid #fff; }
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #def1f0;
+  position: relative;
+  top: 15px;
+  right: -5px;
+  content: '';
+}
+.title-mobile {
+  display: none;
+}
+ @media only screen and (max-width:900px) {
+
+.nav-fostrap {
+  background:transparent;
+  width: 200px;
+  height: 100%;
+  display: block;
+  position: fixed;
+  left: -200px;
+  top: 0px;
+  -webkit-transition: left 0.25s ease;
+  -moz-transition: left 0.25s ease;
+  -ms-transition: left 0.25s ease;
+  -o-transition: left 0.25s ease;
+  transition: left 0.25s ease;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;text-decoration: none
+}
+.title-mobile {
+  position: fixed;
+  display: block;
+    top: 10px;
+    font-size: 20px;
+    left: 100px;
+    right: 100px;
+    text-align: center;
+    color: #000;
+}
+.nav-fostrap.visible {
+  left: 0px;
+  -webkit-transition: left 0.25s ease;
+  -moz-transition: left 0.25s ease;
+  -ms-transition: left 0.25s ease;
+  -o-transition: left 0.25s ease;
+  transition: left 0.25s ease;
+}
+
+.nav-bg-fostrap {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background:transparent;
+  padding: 12px 0 0 10px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.navbar-fostrap {
+  display: inline-block;
+  vertical-align: middle;
+  height: 50px;
+  cursor: pointer;
+  margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.navbar-fostrap span {
+  height: 2px;
+  background: #000;
+  margin: 5px;
+  display: block;
+  width: 20px;text-decoration: none
+}
+
+.navbar-fostrap span:nth-child(2) { width: 20px; }
+
+.navbar-fostrap span:nth-child(3) { width: 20px; }
+
+.nav-fostrap ul { padding-top: 50px; }
+
+.nav-fostrap li { display: block; }
+
+.nav-fostrap li a {
+  display: block;
+  color: #505050;
+  font-weight: 600;
+  color: #000;text-decoration: none
+}
+
+.nav-fostrap li:first-child:hover a { border-radius: 0; }
+
+.nav-fostrap li ul.dropdown { position: relative; }
+
+.nav-fostrap li ul.dropdown li a {
+  background:transparent !important;
+  border-bottom: none;
+  color: #000 !important;text-decoration: none
+}
+
+.nav-fostrap li:hover a {
+  background: transparent;
+  color: #000!important;text-decoration: none
+}
+
+.nav-fostrap li ul.dropdown li:hover a {
+  background: rgba(0,0,0,.1) !important;
+  color: #000 !important;text-decoration: none
+}
+
+.nav-fostrap li ul.dropdown li a { padding: 10px 10px 10px 30px; }
+
+.nav-fostrap li:hover .arrow-down { border-top: 5px solid #fff; }
+
+.arrow-down {
+  border-top: 5px solid #505050;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.cover-bg {
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+}
+ @media only screen and (max-width:1199px) {
+
+.container { width: 96%; }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+h1{ font-family: 'Times New Roman', Times, serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:rgba(0, 0, 0, .5);
+   
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 1;
+    text-align: center;
+
+ }
+h2,h3{font-family: 'Times New Roman', Times, serif, ;
+    color: black;
+    font-size: 20px;
+    text-transform:capitalize;
+    text-decoration: none;
+    opacity: 1;}
+
+
+    p,li{font-family:'Times New Roman', Times, serif;
+        color: black;
+        font-size: 15px;
+        text-transform:capitalize;
+        text-decoration: none;
+        opacity: 1;}
+
+ a{font-family:'Times New Roman', Times, serif;
+   
+    font-size: 20px;
+    text-transform:capitalize;
+    text-decoration: none;
+    opacity: 1;}
+.w2{color: #000;
+background-color: #BAC1C8;
+
+}
+
+.b{	border: medium none;
+	border-bottom:1px solid black;
+	display: inline-block;
+	height: 40px;
+	padding: 0;
+	width: 100;
+  color:#000;
+    margin-top:10px;
+
+}  
+.b:focus{
+
+  outline-width: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </style>
+  <body>
+
+
+    <div id="main">
+      <div class="container">
+        <div  style="margin-top:50px;margin-bottom:30px;text-align:center;">
+          <img src="images/p2.png" style="width: 100px;margin-bottom:15px">
+          
+        </div>
+        <nav>
+          <div class="nav-fostrap">
+            <ul>
+                          
+              <li><a href="index.html">𝐉𝐮𝐧𝐚𝐢𝐝 𝐉𝐚𝐦𝐬𝐡𝐞𝐝</a></li>
+
+              <li><a href="men.html"> Men<span class="arrow-down"></span></a>
+                <ul class="dropdown">
+                  <li><a href="MUNSTITCHED.html">UNSTITCHED</a></li>
+                  <li><a href="MSTITCHED.html">STITCHED</a></li> </ul>
+              </li>
+              <li><a href="women.html"  >women<span class="arrow-down"></span></a>
+                <ul class="dropdown">
+                  <li><a href="WUNSTITCHED.html">UNSTITCHED</a></li>
+                  <li><a href="WSTITCHED.html">STITCHED</a></li>
+                </ul>
+              
+              </li>
+              <li><a href="boys.html">boy & girls</a></li>
+              <li><a href="f.html">FRAGRANCES</a></li>
+ 
+            </ul>
+         </div>
+          <div class="nav-bg-fostrap">
+            <div class="navbar-fostrap">  </div>
+            <a href="" class="title-mobile">𝐉𝐮𝐧𝐚𝐢𝐝 𝐉𝐚𝐦𝐬𝐡𝐞𝐝</a>
+          </div>
+        </nav>
+        <div class='content'>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+
+<script>
+  $(document).ready(function(){
+      $('.navbar-fostrap').click(function(){
+        $('.nav-fostrap').toggleClass('visible');
+        $('body').toggleClass('cover-bg');
+      });
+    });</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background-image:url(images/s1.jpg) ;"> 
+        
+        
+               <div class="slide-text">
+                   <h2>Men Kurta</h2>
+                 <p>Experience the most premium wear for men.</p>
+               <a href="men.html"> shop now </a>
+            </div>
+                     </div>
+                     <div class="swiper-slide" style="background-image:url(images/s2.jpg) ;"> 
+        
+        
+                        
+                    </div>    
+                              <div class="swiper-slide" style="background-image:url(images/s3.jpg) ;"> 
+        
+        
+                                <div class="slide-text">
+                                    <h2>Ladies Kurti
+                                            </h2>
+                                  <p>𝑅𝑒𝒶𝒹𝓎 𝓉𝑜 𝓌𝑒𝒶𝓇 𝒻𝑜𝓇𝓂𝒶𝓁 𝒶𝓃𝒹 𝒸𝒶𝓈𝓊𝒶𝓁 𝓀𝓊𝓇𝓉𝒾 𝒸𝑜𝓁𝓁𝑒𝒸𝓉𝒾𝑜𝓃.
+                                    </p>
+                                <a href="women.html"> shop now </a>
+                             </div>
+                            </div>    
+                                      <div class="swiper-slide" style="background-image:url(images/s4.jpg) ;"> 
+        
+        
+                        
+                                              </div>
+
+                                              <div class="swiper-slide" style="background-image:url(images/s5.jpg) ;"> 
+        
+        
+                                                <div class="slide-text">
+                                                    <h2>Fragrances and Cosmetics</h2>
+                                                 <h2>J. Fragrances</h2>
+                                                <a href="f.html"> shop now </a>
+                                             </div> 
+                                                      </div>
+                                             
+                                                      </div>
+                                                      <div class="swiper-pagination"></div>                                         
+              </div>
+             
+            <!-- Add Pagination -->
+            
+          </div>
+        
+        
+        
+        
+          <div class="container">
+
+                <div class="row">
+            
+                    <div class="col-md-4 col-sm-6 col-lg-3" >
+                        <div class="box">
+                            <img src="images/1.jpg">
+                            <div class="box-content">
+                                <h3 class="title">women </h3>
+                                <span class="post">	unstitched</span>
+                            </div>
+                            <ul class="icon">
+                                <li><a href="WUNSTITCHED.html">Shop Now</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-lg-3" >
+                        <div class="box">
+                           <img src="images/2.1.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Women</h3>
+                                <span class="post">	stitched</span>
+                            </div>
+                            <ul class="icon">
+                                <li><a href="WSTITCHED.html">Shop Now</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+              
+                    <div class="col-md-4 col-sm-6 col-lg-3" >
+                <div class="box">
+                   <img src="images/1.2.jpg">
+                    <div class="box-content">
+                        <h3 class="title">men</h3>
+                        <span class="post"> 	Unstitched</span>
+                    </div>
+                    <ul class="icon">
+                        <li><a href="MUNSTITCHED.html">Shop Now</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+                
+            
+            <div class="col-md-4 col-sm-6 col-lg-3" >
+            <div class="box">
+               <img src="images/1.3.jpg">
+                <div class="box-content">
+                    <h3 class="title">men</h3>
+                    <span class="post">  shalwar kameez</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="MSTITCHED.html">Shop Now</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+            <div class="box">
+               <img src="images/1.4.jpg">
+                <div class="box-content">
+                    <h3 class="title">FRAGRANCES</h3>
+                    <span class="post"> perfume 	</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="f.html">Shop Now</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+            <div class="box">
+               <img src="images/1.5.jpg">
+                <div class="box-content">
+                    <h3 class="title"> makeup</h3>
+                    <span class="post"> beard oil</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="f.html">Shop Now</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+            <div class="box">
+               <img src="images/1.7.jpg">
+                <div class="box-content">
+                    <h3 class="title"> foot wear </h3>
+                    <span class="post"> sandals</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="Men.html">Shop Now</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+            <div class="box">
+               <img src="images/1.6.jpg">
+                <div class="box-content">
+                    <h3 class="title">kids girl</h3>
+                    <span class="post"> stitched</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="boys.html">Shop Now</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            </div>
+            
+            </div>
+      
+       <h1>boys & girls </h1>
+       <div class="container">
+
+        <div class="row">
+       <div class="col-md-4 col-sm-6 col-lg-3 row2  m1"  >
+        <div class="box">
+           <img src="images/1.9.jpg">
+            <div class="box-content">
+                <h3 class="title">teen girl</h3>
+                <span class="post"> stitched</span>
+            </div>
+            <ul class="icon">
+                <li><a href="boys.html">Shop Now</a></li>
+                
+            </ul>
+        </div>
+        </div>
+         
+       <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+        <div class="box">
+           <img src="images/1.8.jpg">
+            <div class="box-content">
+                <h3 class="title">kids girl</h3>
+                <span class="post"> stitched</span>
+            </div>
+            <ul class="icon">
+                <li><a href="boys.html">Shop Now</a></li>
+                
+            </ul>
+        </div>
+        </div>
+
+ 
+
+    
+        <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+          <div class="box">
+             <img src="images/2.0.jpg">
+              <div class="box-content">
+                  <h3 class="title">teen boys</h3>
+                  <span class="post"> stitched</span>
+              </div>
+              <ul class="icon">
+                  <li><a href="boys.html">Shop Now</a></li>
+                  
+              </ul>
+          </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-lg-3 row2" >
+            <div class="box">
+               <img src="images/2.2.jpg">
+                <div class="box-content">
+                    <h3 class="title">kids boys</h3>
+                    <span class="post"> stitched</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="boys.html">Shop Now</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+</div></div>
+
+
+<script src="js/swiper.min.js"></script>
+
+<script>
+        var swiper = new Swiper('.swiper-container', {
+          effect: 'cube',
+          grabCursor: true,
+          cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        });
+      </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-3  col-md-3 col-sm-6 col-12 ">
+                    <h3> need help</h3>
+                    <ul>
+                        <li><a href="#"> <img src="images/i6.png" style="width: 20; height: 20px;" >+92 21 111 112 111 <br>(9am - 10pm , Mon - Sat)</a></li>
+                          <li> <a href="#"><img src="images/i6.png" style="width: 20; height: 20px;" >+92 21 3878 1662<br>(9am - 10pm , Mon - Sat)</a>
+                        </li>
+                        <li> <a href="eshop@junaidjamshed.com "><img src="images/i7.png" style="width: 20; height: 20px;" >  eshop@junaidjamshed.com  </a> </li>
+                     
+                    </ul>
+                </div>
+               
+                <div class="col-lg-3  col-md-3 col-sm-6 col-12 ">
+                    <h3>customer Services</h3>
+                    <ul>
+                        <li> <a href="delievery.html"> 
+                          Delivery & Orders
+                        </a> </li>
+                        <li> <a href="return.html">   Returns & Exchanges</a></li>
+                          
+                        <li> <a href="term.html">
+                          Terms & Conditions
+                         </a> </li>
+                        <li> <a href="pri.html">  Privacy Policy  </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-12 col-12 ">
+                    <h3> company </h3>
+                    <ul>
+                        <li> <a href="Contact.html"> Contact </a> </li>
+                        <li> <a href="https://www.linkedin.com/company/junaid-jamshed-private-limited/"> careers </a> </li>
+                        <li> <a href="about.html"> About </a> </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-12 ">
+                    <h3> Subscribe Us </h3>
+                    <ul>
+                        <li>
+                            <div class="input-append subscribe-btn text-center">
+                                <input type="text" class="b" placeholder="Email ">
+                                <button class="btn  btn-dark"style="color: #FFF"  type="button"> Subscribe  </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+             
+                        <li> <a href="https://www.facebook.com/j.junaidjamshed"> <img src="images/i1.png" style="width: 38; height: 34px;" >   </a> </li>
+                        <li> <a href="https://twitter.com/_JunaidJamshed"> <img src="images/i4.png"style="width: 38; height: 34px;">   </a> </li>
+                        <li> <a href="https://www.youtube.com/channel/UC5xbg6lBACA3HBdN8idiQvQ"> <img src="images/i5.png"style="width: 38; height: 34px;">   </a> </li>
+                        <li> <a href="https://www.instagram.com/j.junaidjamshed/"> <img src="images/i2.png"style="width: 35; height: 33px;">   </a> </li>
+                        <li> <a href="https://www.linkedin.com/company/junaid-jamshed-private-limited/"> <img src="images/i3.png"style="width: 38; height: 34px;">    </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom black">
+        <div class="container">
+            <p class="pull-left white"> Copyright &copy; 2019. All rights reserved by Arsalan shah- junaid jamshed</p>
+            
+    <!--/.footer-bottom--> 
+</footer>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
